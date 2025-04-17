@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native"; 
 
-export default function Filtro () {
+export default function Inicial () {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Página Menu que contém informações</Text>

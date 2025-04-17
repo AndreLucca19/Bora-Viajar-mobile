@@ -1,3 +1,4 @@
+// import React, { useState } from 'react';
 // import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 // import { useNavigation } from '@react-navigation/native';
 
@@ -13,7 +14,6 @@
 //         console.log('Email:', email);
 //         console.log('Senha:', senha);
 
-//         // Voltar para a tela de login
 //         navigation.navigate('Login');
 //     };
 
