@@ -1,8 +1,12 @@
 import React from "react";
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground } from "react-native";
 
 export default function Login({ navigation }) {
     return (
+        <ImageBackground 
+        source={require("../assets/teste.jpg")} 
+        style={styles.background}
+    >
             <View style={styles.container}>
                 <View style={styles.loginBox}>
                     <Text style={styles.title}>Bem Vindo!</Text>
@@ -16,30 +20,35 @@ export default function Login({ navigation }) {
                         placeholder="Senha"
                         placeholderTextColor="#aaa"
                         secureTextEntry
-                    />
+                    /> <TouchableOpacity onPress={() => navigation.navigate("Cadastro")}>
+                        <Text style={styles.linkText}>Não tem uma conta? Crie já</Text>
+                    </TouchableOpacity>
                     <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Home")}>
                         <Text style={styles.buttonText}>ENTRAR</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate("Cadastro")}>
-                        <Text style={styles.linkText}>Não tem uma conta? Crie já</Text>
-                    </TouchableOpacity>
                 </View>
             </View>
+    </ImageBackground>
     );
 }
 
 const styles = StyleSheet.create({
+    background: {
+        flex: 1,
+        width: "100%", 
+        height: "100%", 
+        resizeMode: "cover"
+    },
     container: {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#87CEEB", 
     },
     loginBox: {
         width: "90%",
         padding: 20,
-        backgroundColor: "rgba(255, 255, 255, 0.8)", 
-        borderRadius: 10,
+        backgroundColor: "rgba(255, 255, 255, 0.49)", 
+        borderRadius: 25,
         alignItems: "center",
     },
     title: {
@@ -51,18 +60,18 @@ const styles = StyleSheet.create({
     input: {
         width: "100%",
         height: 50,
-        backgroundColor: "#fff",
+        backgroundColor: "rgba(255, 255, 255, 0.36)",
         borderRadius: 8,
         paddingHorizontal: 15,
         marginBottom: 15,
         borderWidth: 1,
-        borderColor: "#ddd",
+        borderColor: "rgba(255, 255, 255, 0.38)",
     },
     button: {
         width: "100%",
         height: 50,
         backgroundColor: "#00C4B4",
-        borderRadius: 8,
+        borderRadius: 15,
         justifyContent: "center",
         alignItems: "center",
         marginTop: 10,
