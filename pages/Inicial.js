@@ -1,10 +1,12 @@
 import React from "react";
-import { View, Text } from "react-native"; 
+import { View, Text, Button } from "react-native"; 
 
-export default function Inicial () {
+export default function Inicial() {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Página Menu que contém informações</Text>
+            <Text style={styles.title}>Página Menu que contém informações</Text>         
+            <Button title="Ir para a timeline" onPress={() => navigation.navigate("Home")} />
+
         </View>
     );
 }
