@@ -47,7 +47,8 @@ export default function Post({ post }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        width: '100%',
+        width: '188%',
+        height: 'auto',
         backgroundColor: '#fff',
         borderRadius: 8,
         padding: 10,
