@@ -2,6 +2,15 @@ import React from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground } from "react-native";
 
 export default function Login({ navigation }) {
+    const [password, setPassword] = React.useState("");
+    
+    const handleLogin = () => {
+        if (password.length < 6) {
+            Alert.alert("Erro", "A senha deve ter no minimo 6 caracteres.");
+        } else {
+            navigation.navigate("Home");
+        }
+    };
     return (
         <ImageBackground 
         source={require("../assets/teste.jpg")} 
@@ -20,10 +29,13 @@ export default function Login({ navigation }) {
                         placeholder="Senha"
                         placeholderTextColor="White"
                         secureTextEntry
-                    /> <TouchableOpacity onPress={() => navigation.navigate("Cadastro")}>
+                        value={password}
+                        onChangeText={setPassword}
+                    /> 
+                    <TouchableOpacity onPress={() => navigation.navigate("Cadastro")}>
                         <Text style={styles.linkText}>Não tem uma conta? Crie já</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Home")}>
+                    <TouchableOpacity style={styles.button} onPress={handleLogin}>
                         <Text style={styles.buttonText}>ENTRAR</Text>
                     </TouchableOpacity>
                 </View>

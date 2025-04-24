@@ -1,14 +1,23 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const Cadastro = () => {
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
+    const [confirmarSenha, setConfirmarSenha] = useState('');
     const navigation = useNavigation();
 
     const handleCadastro = () => {
+        if (senha.length < 6) {
+            Alert.alert("Erro", "A senha deve ter no minimo 6 caracteres.");
+            return;
+        }
+        if (senha !== confirmarSenha) {
+            Alert.alert("Erro", "As senhas não coincidem.");
+            return;
+        }
         console.log('Nome:', nome);
         console.log('Email:', email);
         console.log('Senha:', senha);
@@ -17,8 +26,8 @@ const Cadastro = () => {
     };
 
     return (
-        <ImageBackground 
-            source={require("../assets/Rj-C.jpg")} 
+        <ImageBackground
+            source={require("../assets/Rj-C.jpg")}
             style={styles.background}
         >
             <View style={styles.container}>
@@ -62,8 +71,8 @@ const Cadastro = () => {
                     <TextInput
                         style={styles.input}
                         placeholder="Confirmar Senha"
-                        value={senha}
-                        onChangeText={setSenha}
+                        value={confirmarSenha}
+                        onChangeText={setConfirmarSenha}
                         secureTextEntry
                         placeholderTextColor="White"
                     />
@@ -79,8 +88,8 @@ const Cadastro = () => {
 const styles = StyleSheet.create({
     background: {
         flex: 1,
-        width: "100%", 
-        height: "100%", 
+        width: "100%",
+        height: "100%",
         resizeMode: "cover"
     },
     container: {
@@ -91,7 +100,7 @@ const styles = StyleSheet.create({
     loginBox: {
         width: "90%",
         padding: 20,
-        backgroundColor: "rgba(255, 255, 255, 0.49)", 
+        backgroundColor: "rgba(255, 255, 255, 0.49)",
         borderRadius: 25,
         alignItems: "center",
     },
