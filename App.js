@@ -8,13 +8,23 @@ import Cadastro from "./pages/Cadastro";
 const Stack = createStackNavigator();
 
 
+
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Cadastro" component={Cadastro} />
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ headerShown: false}}
+          /> 
+        <Stack.Screen 
+        name="Cadastro" 
+        component={Cadastro} 
+        options={{headerShown: false}}
+        />
       </Stack.Navigator>
+      
     </NavigationContainer>
      // <NavigationContainer>
     //<Tab /> 

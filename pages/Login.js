@@ -13,12 +13,12 @@ export default function Login({ navigation }) {
                     <TextInput
                         style={styles.input}
                         placeholder="Nome ou email"
-                        placeholderTextColor="#aaa"
+                        placeholderTextColor="White"
                     />
                     <TextInput
                         style={styles.input}
                         placeholder="Senha"
-                        placeholderTextColor="#aaa"
+                        placeholderTextColor="White"
                         secureTextEntry
                     /> <TouchableOpacity onPress={() => navigation.navigate("Cadastro")}>
                         <Text style={styles.linkText}>Não tem uma conta? Crie já</Text>
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: 50,
         backgroundColor: "rgba(255, 255, 255, 0.36)",
-        borderRadius: 8,
+        borderRadius: 20,
         paddingHorizontal: 15,
         marginBottom: 15,
         borderWidth: 1,
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: 50,
         backgroundColor: "#00C4B4",
-        borderRadius: 15,
+        borderRadius: 20,
         justifyContent: "center",
         alignItems: "center",
         marginTop: 10,
